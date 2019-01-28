@@ -1,0 +1,75 @@
+/* Header
+ * Name: Yingjian Pei
+ * Login: cs30fex
+ * Date: Nov 29, 2018
+ * Source of Help: myself and Tutor */ 
+ 
+ Description:
+
+ The purpose of this programming assignment is to gain more experience with:
+ In this assignment you are writing a two part interactive program meant to 
+ check if an email is in a list of spam addresses or not. The first part will 
+ read in email data files and populate hash tables with these email addresses, 
+ then write out these populated tables into an output file. The second part
+ will allow for user interaction with the data. 
+
+ How to build/compile the program:
+ 1) You first login to the ucsd ieng6 account
+ 2) Then we need to ssh cs30xxy@pi-cluster.ucsd.edu
+ 3) Then we need to creat a directory named pa3
+ 4) Then we write c and assembly and c files
+ 5) Then we build the assembly and c files by following the pa
+    instructions
+ 6) Afterward, we compile the program by "make"
+ 7) Usually, we might need to "make clean" 
+ 8) Then we would have a executionable file named pa1
+ 9) we run the program by saying ./create and put in the flags
+ 10) then we run ./search and put in the flags
+
+ Example of normal output (search):
+
+ cs30fex@pi-cluster-004:~/pa3$ ./search -i big
+ Enter a word: we
+ we was found in 3 tables.
+ Enter a word: jason
+ jason was found in 3 tables.
+ Enter a word: horizontal@hack.co
+ horizontal@hack.co is SPAM!
+ Enter a word: ^C
+ 
+ Example of normal output (create):
+ cs30fex@pi-cluster-004:~/pa3$ ./create -i emails_all -o big -s 25000
+ cs30fex@pi-cluster-004:~/pa3$ 
+
+ Example of abnormal output (search):
+
+ cs30fex@pi-cluster-004:~/pa3$ ./search -i bigwwe
+ Error opening table file for reading: No such file or directory
+
+ Usage: ./search -i inFile [-h]
+
+ cs30fex@pi-cluster-004:~/pa3$ 
+
+ Example of abnormal output (create):
+ cs30fex@pi-cluster-004:~/pa3$ ./create -i emails_all -o big -l      
+ ./create: invalid option -- 'l'
+
+ Usage: ./create -i dataFile -o outFile [-s size] [-h]
+
+ cs30fex@pi-cluster-004:~/pa3$ 
+
+ 
+ How you tested your program:
+ I used gdb to help me debug the errors. By step, next, nexti commands, I am
+ able to find the compilation and logical erros at specific lines of function. 
+ In this pa, there are a lot of segmentation errors. I used gdp to find the
+ memory leaks and was able to make sure the program run without bugs. Then
+ finally, I used the diff command to find the difference between the
+ original and the standard solution.
+
+ Answer to PA specific questions:
+ If my friend is stressed and ask me for my code. I would not give to them 
+ and report them to academic integrity if they don't comply.
+
+
+
